@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    --background: 220 100% 8%;
+    --foreground: 195 80% 95%;
+
+    --card: 220 80% 12%;
+    --card-foreground: 195 80% 95%;
+
+    --popover: 220 80% 12%;
+    --popover-foreground: 195 80% 95%;
+
+    --primary: 35 100% 50%;
+    --primary-foreground: 220 100% 8%;
+
+    --secondary: 186 82% 88%;
+    --secondary-foreground: 220 100% 8%;
+
+    --muted: 220 60% 16%;
+    --muted-foreground: 210 20% 60%;
+
+    --accent: 186 82% 88%;
+    --accent-foreground: 220 100% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 40% 20%;
+    --input: 220 40% 20%;
+    --ring: 35 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 80% 10%;
+    --sidebar-foreground: 195 80% 95%;
+    --sidebar-primary: 35 100% 50%;
+    --sidebar-primary-foreground: 220 100% 8%;
+    --sidebar-accent: 220 60% 16%;
+    --sidebar-accent-foreground: 195 80% 95%;
+    --sidebar-border: 220 40% 20%;
+    --sidebar-ring: 35 100% 50%;
+
+    /* Custom tokens */
+    --navy: 220 100% 8%;
+    --navy-light: 220 80% 12%;
+    --orange: 35 100% 50%;
+    --orange-glow: 35 100% 60%;
+    --cyan: 186 82% 88%;
+    --cyan-muted: 186 40% 30%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(220 100% 8%) 0%, hsl(220 80% 14%) 50%, hsl(220 100% 8%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(35 100% 50%), hsl(30 100% 45%));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(35 100% 50% / 0.08) 0%, transparent 70%);
+    --shadow-orange: 0 4px 30px hsl(35 100% 50% / 0.2);
+    --shadow-card: 0 8px 40px hsl(220 100% 4% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .text-gradient-orange {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-orange);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-glow {
+    background-image: var(--gradient-glow);
+  }
+
+  .shadow-orange {
+    box-shadow: var(--shadow-orange);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .section-padding {
+    @apply px-4 py-14 sm:px-6 md:px-12 md:py-20 lg:px-24 lg:py-28;
+  }
+}
